@@ -7,14 +7,13 @@ X := Proj(quo<R|f>);
 
 assert IsNonsingular(X);
 
-//intersection with ell = z0 - 50*z2
+//intersection with ell = z0 - 49*z2
 
-F := Evaluate(f, [50, t, 1]);
+F := Evaluate(f, [49, t, 1]);
 
 K := NumberField(F);
 OK := MaximalOrder(K);
-five := ideal<OK | 5>;
-factors := Factorization(five);
+seven := ideal<OK | 7>;
+factors := Factorization(seven);
 assert #factors eq 1;
 assert factors[1][2] eq 2;
-
